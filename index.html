@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cat Runner</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">🐾</div>
+        <div>
+          <div class="title">Cat Runner</div>
+          <div class="subtitle">空格/↑/点击：跳跃｜R：重新开始｜P：暂停</div>
+        </div>
+      </div>
+
+      <div class="hud">
+        <div class="pill"><span class="k">Score</span><span id="score">0</span></div>
+        <div class="pill"><span class="k">Best</span><span id="best">0</span></div>
+        <div class="pill"><span class="k">Speed</span><span id="speed">1.0×</span></div>
+      </div>
+    </header>
+
+    <main class="stage">
+      <canvas id="game" width="900" height="300" aria-label="Cat Runner Game"></canvas>
+
+      <div id="overlay" class="overlay">
+        <div class="card">
+          <h1>🐱 Cat Runner</h1>
+          <p>按 <b>空格</b> 或 <b>↑</b> 或 <b>点击/触摸</b> 开始并跳跃，躲避障碍物。</p>
+          <div class="row">
+            <button id="btnStart" class="btn primary">开始</button>
+            <button id="btnHow" class="btn">玩法</button>
+          </div>
+          <details id="how" class="how">
+            <summary>查看快捷键</summary>
+            <ul>
+              <li><b>Space / ↑ / Tap</b>：跳跃</li>
+              <li><b>R</b>：重新开始</li>
+              <li><b>P</b>：暂停/继续</li>
+            </ul>
+          </details>
+          <div class="tip">提示：速度会逐渐变快 😼</div>
+        </div>
+      </div>
+
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </main>
+
+    <footer class="footer">
+      <span>纯前端静态游戏：可直接部署到 GitHub Pages / Netlify。</span>
+    </footer>
+  </div>
+
+  <script src="./game.js"></script>
+</body>
+</html>
